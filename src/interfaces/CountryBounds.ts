@@ -1,8 +1,7 @@
 import {NominatimFeature} from './NominatimFeature'
 
-export interface Item {
+export interface CountryBounds {
   type: string
   licence: string
   features: NominatimFeature[]
 }
-

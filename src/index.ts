@@ -1,16 +1,16 @@
 import * as full from '../list.json'
 
-import {ItemList} from './interfaces/ItemList'
-import {Item} from './interfaces/Item'
+import {CountryBoundsList} from './interfaces/CountryBoundsList'
+import {CountryBounds} from './interfaces/CountryBounds'
 
-export function getBoundsOfCountries(): ItemList {
-  return (full as unknown as ItemList)
+export function getBoundsOfCountries(): CountryBoundsList {
+  return (full as unknown as CountryBoundsList)
 }
 
 /**
  * @param countryCode - see https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes use Alpha-2 code
  */
-export function getBoundsOfCountryByIsoAlpha2Code(countryCode: string): Item {
+export function getBoundsOfCountryByIsoAlpha2Code(countryCode: string): CountryBounds {
   return full[countryCode.toUpperCase()]
 }
 

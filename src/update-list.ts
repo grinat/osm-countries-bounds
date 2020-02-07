@@ -37,6 +37,12 @@ async function update(): Promise<void> {
     }
 
     try {
+      const acceptedTypes = ['MultiPolygon', 'Polygon']
+      if (acceptedTypes.indexOf(raw.features[0].geometry.type) === -1) {
+        console.log(`${country.alpha2} not a accepted feature type(has ${raw.features[0].geometry.type} need one of ${acceptedTypes.join(',')}), https://wikipedia.org/wiki/${encodeURIComponent(raw.features[0].properties.extratags.wikipedia)}`)
+        continue
+      }
+
       let merged
       if (raw.features.length > 1) {
         merged = union(...raw.features)
@@ -48,11 +54,6 @@ async function update(): Promise<void> {
         highQuality: true,
       })
       raw.features = [simple]
-
-      if (raw.features[0].properties.extratags.place !== 'country') {
-        console.log(`${country.alpha2} is not a country skipped, https://wikipedia.org/wiki/${encodeURIComponent(raw.features[0].properties.extratags.wikipedia)}`)
-        continue
-      }
 
       raw.features[0].properties.namedetails = {
         name: raw.features[0].properties.namedetails.name,

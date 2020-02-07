@@ -41,11 +41,17 @@
       popupContent += `<pre>${JSON.stringify(feature.properties, null, " ")}</pre>`
     }
 
-    layer.bindPopup(popupContent);
+    const popupLayer = layer.bindPopup(popupContent)
+    popupLayer.on('popupopen', () => {
+      layer.setStyle({fillColor: '#f5ff64', color: '#000'})
+    })
+    popupLayer.on('popupclose', () => {
+      layer.setStyle({fillColor: '#3388ff', color: '#3388ff'})
+    })
   }
 
   const fetchUrl = window.location.hostname.indexOf('git') > -1
-    ? 'https://grinat.github.io/osm-countries-bounds/list.json'
+    ? 'https://unpkg.com/osm-countries-bounds/lib/list.json'
     : 'http://localhost:3020/getBoundsOfCountries'
 
   fetch(fetchUrl).then(d => d.json()).then(items => {

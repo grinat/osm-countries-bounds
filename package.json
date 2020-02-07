@@ -1,6 +1,6 @@
 {
   "name": "osm-countries-bounds",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Package for node.js which contain countries with bounds and bbox in geojson format",
   "scripts": {
     "update-list": "node -r ts-node/register src/update-list.ts",
