@@ -3,6 +3,9 @@ Package for node.js which contain countries with bounds and bbox in geojson form
 
 [View bounds on map](https://grinat.github.io/osm-countries-bounds/test/polygons-on-map.html)
 
+[Latest bounds as json](https://unpkg.com/osm-countries-bounds/lib/list.json)
+
+
 ## Usage
 Install
 ```bash

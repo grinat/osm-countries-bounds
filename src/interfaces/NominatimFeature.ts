@@ -1,6 +1,6 @@
 export interface NominatimFeature {
-  type: string
-  bbox: number[]
+  type: 'Feature'
+  bbox: [number, number, number, number]
   properties: {
     place_id: number
     osm_type: string
@@ -26,6 +26,6 @@ export interface NominatimFeature {
   }
   geometry: {
     type: string
-    coordinates: number[][] | number[][][] | number[][][][] | number[][][][][]
+    coordinates: number[] | number[][] | number[][][] | number[][][][]
   }
 }
