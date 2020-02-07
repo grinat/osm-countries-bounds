@@ -18,7 +18,7 @@ jobs:
       - name: Update
         run: |
           npm install
-          npm update-list
+          npm run update-list
         env:
           GITHUB_ACTION: true
 
