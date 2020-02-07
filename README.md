@@ -1,5 +1,7 @@
 # osm-countries-bounds
-Package for node.js which contain countries with bounds and bbox if geojson format
+Package for node.js which contain countries with bounds and bbox in geojson format
+
+[View bounds on map](https://grinat.github.io/osm-countries-bounds/test/polygons-on-map.html)
 
 ## Usage
 Install

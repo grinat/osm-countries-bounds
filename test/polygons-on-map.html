@@ -44,7 +44,11 @@
     layer.bindPopup(popupContent);
   }
 
-  fetch('http://localhost:3020/getBoundsOfCountries').then(d => d.json()).then(items => {
+  const fetchUrl = window.location.hostname.indexOf('git') > -1
+    ? 'https://grinat.github.io/osm-countries-bounds/list.json'
+    : 'http://localhost:3020/getBoundsOfCountries'
+
+  fetch(fetchUrl).then(d => d.json()).then(items => {
     for (const countryCode in items) {
       L.geoJSON(items[countryCode], {
         onEachFeature: onEachFeature

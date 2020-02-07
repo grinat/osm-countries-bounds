@@ -1,7 +1,7 @@
 {
   "name": "osm-countries-bounds",
   "version": "0.0.1",
-  "description": "",
+  "description": "Package for node.js which contain countries with bounds and bbox in geojson format",
   "scripts": {
     "update-list": "node -r ts-node/register src/update-list.ts",
     "test": "mocha -r ts-node/register test/*.spec.ts",
@@ -14,8 +14,8 @@
   "files": [
     "lib/**/*"
   ],
-  "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
+  "main": "lib/src/index.js",
+  "typings": "lib/src/index.d.ts",
   "author": "Gabdrashitov Rinat <paladin2012gnu@gmail.com>",
   "repository": {
     "type": "git",
