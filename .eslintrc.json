@@ -1,0 +1,40 @@
+{
+  "env": {
+    "es6": true,
+    "jest": true,
+    "node": true,
+    "browser": true,
+    "commonjs": true,
+    "serviceworker": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": [
+    "eslint-plugin-import"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2019,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "semi": [2, "never"],
+    "quotes": [2, "single"],
+    "comma-dangle": [2, "always-multiline"],
+    "@typescript-eslint/indent":  ["error", 2],
+    "@typescript-eslint/member-delimiter-style": {
+      "multiline": {
+        "delimiter": "none",
+        "requireLast": false
+      },
+      "singleline": {
+        "delimiter": "comma",
+        "requireLast": false
+      }
+    }
+  }
+}
